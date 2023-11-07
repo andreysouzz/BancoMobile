@@ -1,0 +1,172 @@
+HTML 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Digital</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="user_photo.jpg" alt="User Photo" id="user-photo">
+        <h1>Nome do Usuário</h1>
+    </header>
+    <main>
+        <section id="balance">
+            <h1> josue marcos</h1>
+            <h2>Saldo</h2>
+            <div id="balance-container">
+                <p>R$ 9.999,99</p>
+            </div>
+            <div id="balance-options">
+                <button id="toggle-balance">Esconder Saldo</button>
+            </div>
+        </section>
+        <section id="transaction-history">
+            <h2>Histórico de Transações</h2>
+            <!-- Adicione o código para exibir as transações aqui -->
+        </section>
+        <section id="options">
+            <h2>Opções</h2>
+            <div id="options-container">
+                <div class="option-box" onclick="window.location.href='cartoes.html'">
+                    
+                    <h3>Cartões</h3>
+                </div>
+                <div class="option-box" onclick="window.location.href='pix.html'">
+                    
+                    <h3>PIX</h3>
+                </div>
+                <div class="option-box" onclick="window.location.href='investir.html'">
+            
+                    <h3>Investir</h3>
+                </div>
+                <div class="option-box" onclick="window.location.href='qrcode.html'">
+                    
+                    <h3>QR Code</h3>
+                </div>
+                <div class="option-box" onclick="window.location.href='boleto.html'">
+                    
+                    <h3>Boleto</h3>
+                </div>
+                <div class="option-box" onclick="window.location.href='mais.html'">
+                    
+                    <h3>Mais</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+     
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+CSS
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header #user-photo {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+main {
+    padding: 20px;
+}
+
+#balance {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 20px;
+    
+}
+#balance h1 {
+    background-color: #f2f2f2;
+    text-align: left;
+    text-align: right;
+    
+}
+
+#balance #balance-container {
+    text-align: center;
+}
+
+#balance #balance-options {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#balance #toggle-balance {
+    background-color: #333;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+#transaction-history {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+#options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.option-box {
+    display: inline-block;
+    margin: 5px;
+    white-space: nowrap;
+    height: 50px;
+    background-color: #333;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    padding: 13px;
+    text-align: center;
+    width: calc(100% / 5);
+}
+
+
+JAVA
+
+let balanceVisible = true;
+
+document.getElementById('toggle-balance').addEventListener('click', function() {
+    let balanceContainer = document.getElementById('balance-container');
+
+    if (balanceVisible) {
+        balanceContainer.style.display = 'none';
+    } else {
+        balanceContainer.style.display = 'block';
+    }
+
+    balanceVisible = !balanceVisible;
+});
